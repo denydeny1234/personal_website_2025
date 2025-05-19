@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "PP Neue Montreal";
+  background: url('images/bg_white.png') no-repeat center center fixed;
+background-size: cover;
+transition: background 2s ease-in-out;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  text-align: center;
+}
+
+/* Import fonts */
+@font-face {
+  font-family: 'SolareItalic Medium';
+  src: url('fonts/SolareItalic-Medium.otf') format('opentype');
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Solare Regular';
+  src: url('fonts/Solare-Regular.otf') format('opentype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('fonts/PPNeueMontreal-Regular.otf') format(opentype);
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+.cover-text {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+flex-direction: column; 
+justify-content: center; 
+align-items: center;    
+text-align: center;
+}
+
+
+
+.cover-text h1 {
+  font-size: 6em;
+  font-family: 'Solare Regular';
+  letter-spacing: 0.1em;
+  text-transform: uppercase ;
+}
+
+.cover-text p {
+  font-size: 16px;
+}
+
+
+.cover-img {
+  position: relative;
+  display: block; 
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  width: 70%;
+  height: 100vh;
+  margin: 0 auto;
+}
+.cover-img img {
+  width: 100%;
+  display: block;
+}
+
+.description .long {
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  padding-top: 5em;
+ 
+}
+
+.description .long, .description .short, .visual-content {
+  font-family: 'PP Neue Montreal';
+  display: block; 
+  margin: 0 auto;
+}
+
+.description .long, .description .short {
+  width: 70vw;
+}
+
+.description .short {
+  display: flex;
+  justify-content: space-between; 
+  gap: 2rem; 
+  text-align: left;
+  font-size: 16px;
+  padding-top: 5em;
+}
+
+.description .short .item {
+  width: 25%;
+}
+
+.description .short .item h3 {
+  font-family: 'SolareItalic Medium';
+  margin-bottom: 1em;
+}
+
+.visual-content {
+  margin-top: 15em;
+  margin-bottom: 5em;
+}
+
+.visual-content .row, .visual-content .column {
+ height: 100vh;
+}
+
+.visual-content .row img {
+  width: 50vw;
+  height: 60vh;
+  object-fit: contain;
+}
+
+.visual-content .row video {
+  width: 50vw;
+  height: 60vh;
+}
+
+.visual-content .column {
+  padding:  0 15em;
+  display: flex;
+  justify-content: space-between; 
+  overflow: hidden;
+}
+
+.visual-content .column img {
+  height: 60vh;
+  
+}
+
+
+
+.visual-content .full, .visual-content .full img {
+  width: 100vw;
+  height: 100vh;
+}
+
+.visual-content .full {
+  margin-bottom: 10em;
+
+}
+
+.visual-content .full img {
+  object-fit: contain;
+
+}
+
+
+body {
+  background: url('images/bg_white.png') no-repeat center center fixed;
+  background-size: cover;
+  transition: background 1s ease-out;
+}
+
+body.footer-visible {
+  background: black;
+}
+
+.footer-contact {
+  position: relative;
+  z-index: 200;
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  pointer-events: none;
+  background: transparent; 
+}
+
+.footer-contact.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-email {
+  font-size: 2rem;
+  font-family: 'Solare Regular', serif;
+  margin-bottom: 2rem;
+}
+
+.footer-address {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  margin-bottom: 3rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.footer-fade-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+
+.background-fader {
+  background-color: black;
+  opacity: 0;
+  z-index: 100;
+  transition: opacity 2s ease-in-out;
+}
+body.footer-visible .background-fader {
+  opacity: 1;
+}
+
+body.footer-visible {
+  background: black;
+}
+
+
+.background-fader::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.9), black);
+  pointer-events: none;
+}
+.footer-trigger {
+  position: relative;
+  height: 100vh;
+  z-index: 100;
+}
+
+#end-marker {
+  height: 1px;
+}
+
+
+#smooth-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+#smooth-content {
+  will-change: transform;
+}
+
+
+
+.close-button {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 0.8em 2em;
+  font-family: 'PP Neue Montreal';
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 30px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background: white;
+  color: black;
+}
